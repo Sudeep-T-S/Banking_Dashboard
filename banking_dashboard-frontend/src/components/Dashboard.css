@@ -1,0 +1,75 @@
+.dashboard {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+  }
+  
+  .dashboard-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-header p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #444;
+  }
+  
+  .balance {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 10px;
+  }
+  
+  .transactions-section {
+    margin-top: 30px;
+  }
+  
+  .transactions-section h3 {
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .transactions-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .transaction-item {
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 5px solid #ccc;
+    transition: background-color 0.3s ease;
+  }
+  
+  .transaction-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  .transaction-item.deposit,
+  .transaction-item.credit {
+    border-left-color: #28a745;
+  }
+  
+  .transaction-item.withdraw,
+  .transaction-item.debit {
+    border-left-color: #dc3545;
+  }
+  
+  .timestamp {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  
+  .error-text {
+    color: red;
+    font-weight: bold;
+  }
+  
