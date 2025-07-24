@@ -1,7 +1,7 @@
-package com.barclaysbanking.security;
+package com.bankingdashboard.security;
 
-import com.barclaysbanking.entity.User;
-import com.barclaysbanking.repository.UserRepository;
+import com.bankingdashboard.entity.User;
+import com.bankingdashboard.repository.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

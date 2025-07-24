@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import './AuthForm.css';
+import { useNavigate, Link } from 'react-router-dom';
+import '../../styles/AuthForm.css';
 
 function Login() {
   const navigate = useNavigate();
@@ -12,18 +12,17 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
-
     try {
       const response = await axios.post('http://localhost:8080/api/auth/login', {
         email,
-        password
-      });
+        password,
+      }); 
 
       localStorage.setItem('jwt', response.data.token);
       localStorage.setItem('email', email);
       navigate('/dashboard');
     } catch (err) {
-      setError('Login failed. Check credentials.');
+      setError(err.response?.data?.message || 'Login failed. Please check your credentials and try again.');
     }
   };
 
@@ -35,20 +34,27 @@ function Login() {
           type="email"
           placeholder="Email"
           value={email}
-          required
           onChange={(e) => setEmail(e.target.value)}
+          required
+          autoComplete="email"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
-          required
           onChange={(e) => setPassword(e.target.value)}
+          required
+          autoComplete="current-password"
+          minLength={6}
         />
         <button type="submit">Login</button>
       </form>
 
       {error && <p className="error-text">{error}</p>}
+
+      <p>
+        Don't have an account? <Link to="/register">Register</Link>
+      </p>
     </div>
   );
 }

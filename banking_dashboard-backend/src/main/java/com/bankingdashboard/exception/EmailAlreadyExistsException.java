@@ -1,4 +1,4 @@
-package com.barclaysbanking.exception;
+package com.bankingdashboard.exception;
 
 public class EmailAlreadyExistsException extends RuntimeException {
 

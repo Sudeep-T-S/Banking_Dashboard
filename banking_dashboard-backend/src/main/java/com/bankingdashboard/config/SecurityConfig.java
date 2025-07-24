@@ -1,6 +1,6 @@
-package com.barclaysbanking.config;
+package com.bankingdashboard.config;
 
-import com.barclaysbanking.security.JwtAuthFilter;
+import com.bankingdashboard.security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,8 +14,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import com.barclaysbanking.repository.UserRepository;
-import com.barclaysbanking.security.CustomerUserDetails;
+import com.bankingdashboard.repository.UserRepository;
+import com.bankingdashboard.security.CustomerUserDetails;
 
 @Configuration
 @EnableWebSecurity

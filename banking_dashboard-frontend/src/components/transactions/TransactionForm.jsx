@@ -4,20 +4,20 @@ import './TransactionForm.css';
 
 function TransactionForm({ fetchDashboard }) {
   const [formData, setFormData] = useState({
-    amount: '',
-    description: '',
     type: 'TRANSFER',
     recipientEmail: '',
+    amount: '',
+    description: '',
   });
 
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setFormData(prev => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -33,8 +33,13 @@ function TransactionForm({ fetchDashboard }) {
       return;
     }
 
+    if (formData.type === 'TRANSFER' && !formData.recipientEmail) {
+      setError('Recipient email is required for transfer transactions.');
+      return;
+    }
+
     const payload = {
-      email: email,
+      email,
       type: formData.type,
       description: formData.description,
       recipientEmail: formData.type === 'TRANSFER' ? formData.recipientEmail : null,
@@ -59,35 +64,36 @@ function TransactionForm({ fetchDashboard }) {
 
       setMessage('Transaction successful!');
       setFormData({
-        amount: '',
-        description: '',
         type: 'TRANSFER',
         recipientEmail: '',
+        amount: '',
+        description: '',
       });
 
       if (fetchDashboard) {
-        await fetchDashboard(); 
+        await fetchDashboard();
       }
-
     } catch (err) {
-      console.error(err);
       setError(err.response?.data?.message || 'Transaction failed. Try again.');
     }
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
+    <div className="transaction-form-container">
       <h3>Make a Transaction</h3>
-      <form onSubmit={handleSubmit}>
-        <select name="type" value={formData.type} onChange={handleChange} required>
-          <option value="DEPOSIT">Deposit</option>
-          <option value="WITHDRAW">Withdraw</option>
-          <option value="TRANSFER">Transfer</option>
-        </select>
-        <br /><br />
+      <form onSubmit={handleSubmit} className="transaction-form">
+        <label>
+          Transaction Type:
+          <select name="type" value={formData.type} onChange={handleChange}>
+            <option value="DEPOSIT">Deposit</option>
+            <option value="WITHDRAW">Withdraw</option>
+            <option value="TRANSFER">Transfer</option>
+          </select>
+        </label>
 
         {formData.type === 'TRANSFER' && (
-          <>
+          <label>
+            Recipient Email:
             <input
               type="email"
               name="recipientEmail"
@@ -96,35 +102,40 @@ function TransactionForm({ fetchDashboard }) {
               onChange={handleChange}
               required
             />
-            <br /><br />
-          </>
+          </label>
         )}
 
-        <input
-          type="number"
-          name="amount"
-          placeholder="Amount"
-          value={formData.amount}
-          onChange={handleChange}
-          required
-        />
-        <br /><br />
+        <label>
+          Amount:
+          <input
+            type="number"
+            name="amount"
+            placeholder="Amount"
+            value={formData.amount}
+            onChange={handleChange}
+            min="0.01"
+            step="0.01"
+            required
+          />
+        </label>
 
-        <input
-          type="text"
-          name="description"
-          placeholder="Description"
-          value={formData.description}
-          onChange={handleChange}
-          required
-        />
-        <br /><br />
+        <label>
+          Description:
+          <input
+            type="text"
+            name="description"
+            placeholder="Description"
+            value={formData.description}
+            onChange={handleChange}
+            required
+          />
+        </label>
 
         <button type="submit">Submit</button>
       </form>
 
-      {message && <p style={{ color: 'green' }}>{message}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {message && <p className="success-text">{message}</p>}
+      {error && <p className="error-text">{error}</p>}
     </div>
   );
 }

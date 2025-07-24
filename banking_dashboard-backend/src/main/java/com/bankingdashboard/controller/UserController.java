@@ -1,13 +1,13 @@
-package com.barclaysbanking.controller;
+package com.bankingdashboard.controller;
 
-import com.barclaysbanking.dto.*;
-import com.barclaysbanking.entity.Transaction;
-import com.barclaysbanking.entity.User;
-import com.barclaysbanking.exception.ApiException;
-import com.barclaysbanking.repository.TransactionRepository;
-import com.barclaysbanking.repository.UserRepository;
-import com.barclaysbanking.security.JwtService;
-import com.barclaysbanking.service.UserService;
+import com.bankingdashboard.dto.*;
+import com.bankingdashboard.entity.Transaction;
+import com.bankingdashboard.entity.User;
+import com.bankingdashboard.exception.ApiException;
+import com.bankingdashboard.repository.TransactionRepository;
+import com.bankingdashboard.repository.UserRepository;
+import com.bankingdashboard.security.JwtService;
+import com.bankingdashboard.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

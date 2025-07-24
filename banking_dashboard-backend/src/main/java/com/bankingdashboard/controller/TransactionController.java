@@ -1,8 +1,8 @@
-package com.barclaysbanking.controller;
+package com.bankingdashboard.controller;
 
-import com.barclaysbanking.dto.TransactionRequest;
-import com.barclaysbanking.entity.Transaction;
-import com.barclaysbanking.service.TransactionService;
+import com.bankingdashboard.dto.TransactionRequest;
+import com.bankingdashboard.entity.Transaction;
+import com.bankingdashboard.service.TransactionService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

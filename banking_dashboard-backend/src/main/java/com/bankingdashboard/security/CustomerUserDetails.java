@@ -1,6 +1,6 @@
-package com.barclaysbanking.security;
+package com.bankingdashboard.security;
 
-import com.barclaysbanking.entity.User;
+import com.bankingdashboard.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

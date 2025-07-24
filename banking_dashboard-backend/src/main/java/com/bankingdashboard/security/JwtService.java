@@ -1,6 +1,6 @@
-package com.barclaysbanking.security;
+package com.bankingdashboard.security;
 
-import com.barclaysbanking.entity.User;
+import com.bankingdashboard.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

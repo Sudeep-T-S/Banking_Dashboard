@@ -1,12 +1,12 @@
-package com.barclaysbanking.service.impl;
+package com.bankingdashboard.service.impl;
 
-import com.barclaysbanking.dto.TransactionRequest;
-import com.barclaysbanking.entity.Transaction;
-import com.barclaysbanking.entity.User;
-import com.barclaysbanking.exception.ApiException;
-import com.barclaysbanking.repository.TransactionRepository;
-import com.barclaysbanking.repository.UserRepository;
-import com.barclaysbanking.service.TransactionService;
+import com.bankingdashboard.dto.TransactionRequest;
+import com.bankingdashboard.entity.Transaction;
+import com.bankingdashboard.entity.User;
+import com.bankingdashboard.exception.ApiException;
+import com.bankingdashboard.repository.TransactionRepository;
+import com.bankingdashboard.repository.UserRepository;
+import com.bankingdashboard.service.TransactionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

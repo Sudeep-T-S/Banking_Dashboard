@@ -1,4 +1,4 @@
-package com.barclaysbanking.exception;
+package com.bankingdashboard.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

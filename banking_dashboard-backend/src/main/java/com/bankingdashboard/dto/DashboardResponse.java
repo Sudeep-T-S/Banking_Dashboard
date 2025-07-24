@@ -1,6 +1,6 @@
-package com.barclaysbanking.dto;
+package com.bankingdashboard.dto;
 
-import com.barclaysbanking.entity.Transaction;
+import com.bankingdashboard.entity.Transaction;
 import lombok.*;
 
 import java.math.BigDecimal;

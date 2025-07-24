@@ -1,7 +1,7 @@
-package com.barclaysbanking.service;
+package com.bankingdashboard.service;
 
-import com.barclaysbanking.dto.TransactionRequest;
-import com.barclaysbanking.entity.Transaction;
+import com.bankingdashboard.dto.TransactionRequest;
+import com.bankingdashboard.entity.Transaction;
 
 import java.util.List;
 

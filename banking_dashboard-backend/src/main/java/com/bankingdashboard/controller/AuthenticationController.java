@@ -1,12 +1,12 @@
-package com.barclaysbanking.controller;
+package com.bankingdashboard.controller;
 
-import com.barclaysbanking.dto.AuthRequest;
-import com.barclaysbanking.dto.AuthResponse;
-import com.barclaysbanking.dto.UserRegistrationRequest;
-import com.barclaysbanking.entity.User;
-import com.barclaysbanking.security.JwtService;
-import com.barclaysbanking.security.CustomerUserDetails;
-import com.barclaysbanking.service.UserService;
+import com.bankingdashboard.dto.AuthRequest;
+import com.bankingdashboard.dto.AuthResponse;
+import com.bankingdashboard.dto.UserRegistrationRequest;
+import com.bankingdashboard.entity.User;
+import com.bankingdashboard.security.JwtService;
+import com.bankingdashboard.security.CustomerUserDetails;
+import com.bankingdashboard.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

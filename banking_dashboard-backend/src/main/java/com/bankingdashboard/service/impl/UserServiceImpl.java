@@ -1,11 +1,11 @@
-package com.barclaysbanking.service.impl;
+package com.bankingdashboard.service.impl;
 
-import com.barclaysbanking.dto.*;
-import com.barclaysbanking.entity.User;
-import com.barclaysbanking.exception.ApiException;
-import com.barclaysbanking.exception.EmailAlreadyExistsException;
-import com.barclaysbanking.repository.UserRepository;
-import com.barclaysbanking.service.UserService;
+import com.bankingdashboard.dto.*;
+import com.bankingdashboard.entity.User;
+import com.bankingdashboard.exception.ApiException;
+import com.bankingdashboard.exception.EmailAlreadyExistsException;
+import com.bankingdashboard.repository.UserRepository;
+import com.bankingdashboard.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

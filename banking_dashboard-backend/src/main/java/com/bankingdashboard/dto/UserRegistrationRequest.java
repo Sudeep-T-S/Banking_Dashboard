@@ -1,4 +1,4 @@
-package com.barclaysbanking.dto;
+package com.bankingdashboard.dto;
 
 import lombok.*;
 

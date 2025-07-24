@@ -1,4 +1,4 @@
-package com.barclaysbanking.config;
+package com.bankingdashboard.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

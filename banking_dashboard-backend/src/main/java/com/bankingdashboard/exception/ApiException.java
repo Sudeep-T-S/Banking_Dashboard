@@ -1,4 +1,4 @@
-package com.barclaysbanking.exception;
+package com.bankingdashboard.exception;
 
 import lombok.Getter;
 

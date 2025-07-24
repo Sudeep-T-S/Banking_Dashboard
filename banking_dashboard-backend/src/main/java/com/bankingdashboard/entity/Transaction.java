@@ -1,4 +1,4 @@
-package com.barclaysbanking.entity;
+package com.bankingdashboard.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

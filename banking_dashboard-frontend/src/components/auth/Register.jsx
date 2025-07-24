@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import './AuthForm.css';
+import '../../styles/AuthForm.css';
 
 function Register() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    password: ''
+    password: '',
   });
 
   const [message, setMessage] = useState('');
@@ -20,14 +20,15 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
     try {
-      const res = await axios.post('http://localhost:8080/api/auth/register', formData);
+      await axios.post('http://localhost:8080/api/auth/register', formData); 
       setMessage('Registration successful! Redirecting to login...');
-      setError('');
-      setTimeout(() => navigate('/login'), 1500);
+      setTimeout(() => {
+        navigate('/login');
+      }, 1500);
     } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed');
-      setMessage('');
+      setError(err.response?.data?.message || 'Registration failed. Please try again.');
     }
   };
 
@@ -38,32 +39,33 @@ function Register() {
         <input
           type="text"
           name="name"
-          placeholder="Name"
           value={formData.name}
           onChange={handleChange}
+          placeholder="Full Name"
           required
         />
         <input
           type="email"
           name="email"
-          placeholder="Email"
           value={formData.email}
           onChange={handleChange}
+          placeholder="Email"
           required
         />
         <input
           type="password"
           name="password"
-          placeholder="Password"
           value={formData.password}
           onChange={handleChange}
+          placeholder="Password"
+          minLength={6}
           required
         />
         <button type="submit">Register</button>
       </form>
 
-      <p className="redirect-link">
-        Already registered? <Link to="/login">Login</Link>
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
       </p>
 
       {message && <p className="success-text">{message}</p>}

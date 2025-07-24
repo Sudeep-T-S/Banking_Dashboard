@@ -1,0 +1,30 @@
+.account-summary-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 0 4px 12px rgba(30, 67, 161, 0.1);
+  margin-bottom: 24px;
+  max-width: 600px;
+  color: #1e293b; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.account-summary-card h2 {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 1.875rem; 
+  color: #1d3557; 
+}
+
+.account-summary-card p {
+  font-size: 1rem; 
+  margin: 8px 0;
+  color: #475569; 
+}
+
+.account-summary-card .balance {
+  font-weight: 700;
+  font-size: 1.25rem; 
+  color: #2a9d8f; 
+  margin-top: 20px;
+}

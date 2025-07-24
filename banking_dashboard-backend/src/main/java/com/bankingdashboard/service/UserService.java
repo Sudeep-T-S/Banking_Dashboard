@@ -1,7 +1,7 @@
-package com.barclaysbanking.service;
+package com.bankingdashboard.service;
 
-import com.barclaysbanking.dto.*;
-import com.barclaysbanking.entity.*;
+import com.bankingdashboard.dto.*;
+import com.bankingdashboard.entity.*;
 
 public interface UserService {
     User registerUser(UserRegistrationRequest request);

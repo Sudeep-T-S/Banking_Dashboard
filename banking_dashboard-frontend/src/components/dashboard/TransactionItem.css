@@ -1,0 +1,39 @@
+.transaction-item {
+  list-style: none;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-item .timestamp {
+  font-size: 0.8rem;
+  color: gray;
+  margin-bottom: 4px;
+}
+
+.transaction-item .transaction-type {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.transaction-item.deposit {
+  border-left: 5px solid #10b981; 
+  background-color: #e6fcef;
+  color: #065f46;
+}
+
+.transaction-item.withdraw {
+  border-left: 5px solid #ef4444; 
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.transaction-item.transfer {
+  border-left: 5px solid #2563eb; 
+  background-color: #e0e7ff;
+  color: #1e40af;
+}
