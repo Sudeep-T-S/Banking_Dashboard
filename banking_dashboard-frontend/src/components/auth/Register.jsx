@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../axiosConfig';
 import { useNavigate, Link } from 'react-router-dom';
 import '../../styles/AuthForm.css';
 
@@ -19,18 +19,20 @@ function Register() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    try {
-      await axios.post('http://localhost:8080/api/auth/register', formData); 
-      setMessage('Registration successful! Redirecting to login...');
-      setTimeout(() => {
-        navigate('/login');
-      }, 1500);
-    } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed. Please try again.');
-    }
-  };
+  e.preventDefault();
+  setError('');
+  setMessage('');
+  
+  try {
+    await api.post('/api/auth/register', formData); 
+    setMessage('Registration successful! Redirecting to login...');
+    setTimeout(() => {
+      navigate('/login');
+    }, 1500);
+  } catch (err) {
+    setError(err.response?.data?.message || 'Registration failed. Please try again.');
+  }
+};
 
   return (
     <div className="auth-container">

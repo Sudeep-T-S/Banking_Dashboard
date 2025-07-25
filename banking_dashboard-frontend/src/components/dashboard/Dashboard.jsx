@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../axiosConfig';
 import AccountSummary from './AccountSummary';
 import TransactionList from './TransactionList';
 import TransactionForm from '../transactions/TransactionForm';
@@ -17,7 +17,7 @@ function Dashboard() {
     }
 
     try {
-      const response = await axios.get('http://localhost:8080/api/users/dashboard', {
+      const response = await api.get('/api/users/dashboard', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

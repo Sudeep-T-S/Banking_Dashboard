@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../axiosConfig';
 import { useNavigate, Link } from 'react-router-dom';
 import '../../styles/AuthForm.css';
 
@@ -13,7 +13,7 @@ function Login() {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/login', {
+      const response = await api.post('/api/auth/login', {
         email,
         password,
       }); 

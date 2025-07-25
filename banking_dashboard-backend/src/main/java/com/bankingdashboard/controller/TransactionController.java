@@ -63,8 +63,8 @@ public class TransactionController {
         ));
     }
 
-    @GetMapping("/history/{email}")
-    public ResponseEntity<List<Transaction>> getUserTransactions(@PathVariable String email) {
+    @GetMapping("/history")
+    public ResponseEntity<List<Transaction>> getUserTransactions(@RequestParam String email) {
         List<Transaction> transactions = transactionService.getUserTransactions(email);
         return ResponseEntity.ok(transactions);
     }
